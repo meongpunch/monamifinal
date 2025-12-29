@@ -1,0 +1,214 @@
+@media screen and (max-width: 1500px) {
+    .history-inner {
+    width: 88%;
+  }
+  .left-col {
+    width: 520px;
+  }
+
+  .left-box .img {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .left-box .date {
+    font-size: 56px;
+  }
+
+  .left-box .txt {
+    font-size: 26px;
+  }
+
+  .history-flex {
+    gap: 120px;}
+
+    .CEO-message .inner {
+  width: 88%;
+  margin: 0px auto 165px;
+}
+
+ 
+}
+
+@media screen and (max-width: 1400px) {
+    .footer-inner .footer-top .top-rightbox .gnb {width: 100%; font-size: 20px;} 
+    .footer-inner .footer-top .top-leftbox {width: 100%;}
+    .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}  
+    }
+
+    @media screen and (max-width: 1300px){
+    .innerHeader {
+        width: 80%;
+    }}   
+
+
+
+@media screen and (max-width: 1024px) {
+  .sec1 .mask h2 {font-size: 6.8vw;}
+  .sec4 .mask h2 {font-size: 6.8vw;}
+  .panel .text-box .title {font-size: 6.8vw;}
+  .msg-intro .mask h2 {font-size: 6.8vw;}
+  .sec2 .title-text {font-size: 6.8vw;}
+  .left-box .date {font-size: 6.8vw;}
+
+  .innerHeader {
+        width: 100%;
+        padding: 0 31px;}
+  .history-flex {
+    flex-direction: column;
+  }
+
+  .left-col,
+  .right-box {
+    width: 100%;
+  }
+
+  /* LEFT는 위에 sticky */
+  .left-col {
+    position: sticky;
+    top: 55px; /* header 높이 */
+    z-index: 5;
+    background: #fff;
+    padding-bottom: 40px;
+  }
+
+  /* pin 효과 제거용 */
+  .left-pin {
+    position: static;
+  }
+
+  .left-box {
+  width: 100%;
+  transform: translateY(0);
+}
+
+.left-pin .left-box .txt-box {text-align: center;}
+  .left-box .img {
+    max-width: 520px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;          /* 원하는 이미지 폭 */
+  margin-top: 48px;
+}
+
+
+
+
+    .CEO-message .inner {
+  margin: 50px auto 200px;
+}
+.msg-intro .inner .CEO-img {overflow: hidden;}
+.msg-intro .inner .CEO-img img {height: 100%; width: auto;}
+.CEO-message .section-text {margin-bottom: 50px;}
+.CEO-message .sub-text {font-size: 18px;}
+
+.CEO-message .sign-box {bottom: -3px; display: flex; justify-content: space-between;}
+.CEO-message .sign-box .sub-text {width: 100px;}
+.CEO-message .sign-box .img {width: 61px; height: auto;}
+
+
+
+
+ /* footer */
+            footer {padding: 85px 61px;}
+            .footer-inner {width: 100%; height: 100%;  margin: 0;}
+            .footer-inner .footer-top {width: 100%;  flex-wrap: wrap; margin-bottom: 44px;}
+            .footer-inner .footer-top .top-leftbox {width: 100%;}
+            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}
+            .footer-inner .footer-top .top-rightbox {width: 100%;}
+            .footer-inner .footer-top .top-rightbox .gnb { width: 100%; }
+            .footer-inner .footer-bottom .bottom-leftbox {margin-bottom: 63px;}
+            .footer-inner .footer-bottom .bottom-rightbox  {justify-content: space-between; width: 100%;}
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+           /* header */
+    .innerHeader {position: relative;}
+    .innerHeader .gnb {display: none; }
+    .innerHeader .menu {display: block; width: 24px; height: 24px; position: absolute; top: 50%; transform: translateY(-50%); right: 31px; cursor: pointer;}
+    .innerHeader .menu span {display: block; background: #fff; width: 24px; height: 3px; position: absolute; border-radius: 3px;}
+    .innerHeader .menu span.a {top: 20%;}
+    .innerHeader .menu span.b {bottom: 20%;}  
+
+    .left-box .img {max-width: 100%;}
+      .left-box {
+  width: 100%;
+  transform: translateY(0);
+}
+
+    .intro .txtbox .main-text {font-size: 90px;}
+    .intro .txtbox .sub-title-text {font-size: 26px;}
+    .sec1 .mask h2 {font-size: 7.6vw;}
+    .sec2 .title-text {font-size: 7.6vw;}
+    .panel .text-box .title {font-size: 7.6vw;}
+    .panel .text-box .desc {font-size: 18px;}
+    .sec4 .mask h2 {font-size: 7.6vw;}
+    .left-box .date {font-size: 7.6vw;}
+    .left-box .txt {font-size: 24px;}
+    .history-list .years {font-size: 40px;}
+    .history-list .sub-text {font-size: 22px;}
+    .history-list .desc {font-size: 18px;}
+    .msg-intro .sub-text {font-size: 18px;}
+    .msg-intro .mask h2 {font-size: 7.6vw;}
+    
+    .CEO-message .section-text {font-size: 48px;}
+    .CEO-message .text-box {display:flex; flex-wrap: wrap;}
+    .CEO-message .sub-text {margin-bottom: 88px;}
+    .CEO-message .sign-box {margin-left: auto; display: flex; justify-content: space-between; gap: 8px; width: 200px;}
+    .CEO-message .sign-box .sub-text {
+  line-height: 1;        /* ⭐ 핵심 */
+  display: flex;         /* ⭐ */
+  align-items: flex-end; /* ⭐ */
+  margin-bottom: 0;
+}
+.CEO-message .sign-box {align-items: flex-end;}
+.msg-intro .inner .CEO-img {height: 213px; width: auto;}
+.msg-intro {height: 60vh;}
+.CEO-message .section-text {margin-bottom: 121px;}
+
+.footer-inner .footer-top .top-rightbox {width: 100%; flex-wrap: wrap;}
+.footer-inner .footer-top .top-rightbox .gnb {width: 100%; flex-wrap: wrap;}
+.footer-inner .footer-top .top-rightbox .gnb li {width: 100%; margin-bottom: 8px; padding: 10px 0;}
+.footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 0; width: 100%; margin-bottom: 10px; font-size: 12px;}
+}
+
+@media screen and (max-width: 600px){
+ /* footer */
+footer {padding: 82px 24px;}
+.footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0; width: 100%; margin-bottom: 19px;}
+footer-inner .footer-bottom .bottom-rightbox {flex-wrap: wrap;}
+.footer-inner .footer-top .top-rightbox .sns-icon {justify-content: left;}}
+
+
+
+/* 390 */
+@media screen and (max-width: 390px) {
+        .menuOpen .list {padding: 31px;}
+    .sec1 .mask h2 {font-size: 40px;}
+    .intro .txtbox .main-text {font-size: 85px;}
+    .intro .txtbox .sub-title-text {font-size: 18px;}
+    .sec4 .mask h2 {font-size: 36px;}
+    .sec1 {height: 844px; margin-top: 200px;}
+    .msg-intro .mask h2 {font-size: 9.2vw;}
+    .history-list li {margin-bottom: 100px;}
+    .CEO-message .sub-text {font-size: 16px;}
+    .history-list .years {font-size: 28px;}
+    .history-list .sub-text {font-size: 20px;}
+    .history-list .desc {font-size: 16px;}
+    .left-box .date{font-size: 36px;}
+    .left-box {
+  width: 100%;
+  transform: translateY(0);
+}
+    .CEO-message .section-text {font-size: 30px;}
+    .msg-intro .inner .CEO-img {height: 230px; overflow: hidden; width: 100%;}
+    .msg-intro .inner .CEO-img img {height: 100%; width: auto;}
+    .left-box .img {width: 100%; overflow: hidden;}
+    .CEO-message .inner {margin-bottom: 200px;}
+    
+}

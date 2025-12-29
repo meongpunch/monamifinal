@@ -1,0 +1,721 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* === [1] 공통 요소 (전달주신 가이드) === */
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 21px;
+    color: #fff;
+    letter-spacing: -0.03em;
+    background: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.main-title {
+    font-size:  4.7vw;
+    line-height: 1.2;
+    font-weight: bold;
+}
+.product_detail .main-title{
+    /* ▼▼▼ 여기부터 추가/수정하세요 ▼▼▼ */
+    
+    /* 1. 채워지기 전 색상 (연한 회색/투명한 흰색) */
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2); 
+    color: rgba(255, 255, 255, 0.2); /* 호환성용 */
+
+    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
+    background-image: linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    
+    /* 3. 배경을 글자 모양대로 잘라냄 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
+    background-size: 0% 100%;
+}
+
+.main-title .text-line.red {
+    color: rgba(255, 255, 255, 0.2);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
+    background-image: linear-gradient(90deg, #FFA2A2 0%, #DE3D3D 50%, #CE2F2F 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline; 
+}
+/* 새로 추가한 줄 단위 클래스 */
+.text-line {
+    /* 1. 채워지기 전 색상 */
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2); 
+    color: rgba(255, 255, 255, 0.2);
+
+    /* 2. 채워질 색상 (흰색 물감) */
+    background-image: linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    
+    /* 3. 글자 모양대로 자르기 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 4. 초기 상태: 0% (안 보임) */
+    background-size: 0% 100%; 
+    
+    /* 줄바꿈 등 레이아웃 깨짐 방지 */
+    display: inline; 
+}
+
+/* 포인트 컬러(.red) 등 내부 스팬 처리 */
+.text-line span {
+    /* 부모(.text-line)의 효과를 그대로 상속받도록 설정 */
+    -webkit-text-fill-color: inherit;
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+/* 포인트 컬러 (.red) 설정 */
+.text-line .red {
+    /* 1. 텍스트 색상 투명하게 (배경이 보이게) */
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
+
+    /* 2. 배경 설정 (그라데이션 대신 모나미 레드 단색 추천 -> 찌그러짐 해결!) */
+    /* 원하시면 아래 linear-gradient 주석을 풀고 background-color를 지우세요 */
+    background-color: #E3001B; 
+    /* background-image: linear-gradient(90deg, #FFA2A2 0%, #DE3D3D 50%, #CE2F2F 100%); */
+    
+    background-repeat: no-repeat;
+    
+    /* 3. 글자 모양대로 자르기 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 4. ★핵심: 초기 상태를 0%로 설정 (처음부터 채워져 있는 문제 해결) */
+    background-size: 0% 100%; 
+}
+.page-title {
+    font-size: 3.1vw;
+    line-height: 1.2;
+    font-weight: bold;
+
+    /* 1. 채워지기 전 색상 (연한 회색/투명한 흰색) */
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2); 
+    color: rgba(255, 255, 255, 0.2); /* 호환성용 */
+
+    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
+    background-image: linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    
+    /* 3. 배경을 글자 모양대로 잘라냄 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
+    background-size: 0% 100%;
+}
+
+.sub-title {
+    font-size: 1.6vw;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.btn {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.desc {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+.inner {
+    width: 88%;  margin: 0 auto;
+}
+
+.visual {margin: 0;}
+section {margin: 200px 0;}
+
+/* header */
+header { background: rgba(0, 0, 0, 0.2); position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(67.75px); transition: transform 0.4s ;}
+.innerHeader {width: 57.14%; height: 55px;margin: 0 auto; display:flex; justify-content: space-between; text-align: center; align-items: center;}
+.innerHeader h1.logo {width: 16%; padding-bottom: 8px;}
+.innerHeader .gnb {width: 75%; display: flex; justify-content: space-between;}
+.innerHeader .gnb li {font-size: 16px; color: #fff;}
+.innerHeader .menu {display: none;}
+
+
+/* 스크롤을 내릴 때 숨기기 위한 클래스 */
+header.up {transform: translateY(-100%);}
+        
+
+/* visual */
+.visual {height: 100vh; position: relative; overflow: hidden;}
+.visual > img {height: 100vh; width: 100vw; object-fit: cover;}
+.visual .inner {display: flex; position: absolute; bottom: 10%; left: 50%; justify-content: space-between; align-items: flex-end; transform: translateX(-50%);}
+.visual .btn { background: #e8e8ed;  font-weight: 700; letter-spacing: -0.03em; color: #1D1D1F; display: flex; justify-content: space-between; align-items: center; padding: 13px 15.6px 14.5px 30px; border-radius: 30px;}
+.visual .sub-title {margin-bottom: 10px;}
+.visual .btn span {display: inline-block; margin-left: 26px;}
+
+
+/* ================================================== */
+/* [RESET] Function 섹션 레이아웃 초기화 */
+/* ================================================== */
+.function {
+    position: relative;
+    width: 100%;
+    margin: 100px 0;
+    overflow: hidden; /* 가로 스크롤 방지 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+}
+
+/* 제목 공통 설정 */
+.function .inner {
+    width: 100%;
+    margin: 0 auto 40px auto;
+    box-sizing: border-box;
+    /* padding-left 값은 아래 미디어쿼리에서 구간별로 변합니다 */
+}
+
+.function .inner .page-title {
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* ================================================== */
+/* [SWIPER] 구조 설정 (세로 정렬 방지) */
+/* ================================================== */
+.function .swiper {
+    width: 100%; 
+    padding-bottom: 50px;
+    
+    /* padding-left 값도 아래 미디어쿼리에서 구간별로 변합니다 */
+}
+
+.function .swiper .swiper-wrapper {
+    display: flex !important; /* ★무조건 가로 정렬 강제★ */
+    box-sizing: border-box;
+}
+
+.function .swiper .swiper-slide {
+    display: block;
+    flex-shrink: 0; /* 찌그러짐 방지 */
+    background: #1d1d1f;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    /* width, height, margin-right는 아래에서 구간별로 설정 */
+}
+
+.function .swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 텍스트 박스 기본 (모바일 기준 위치) */
+.function .swiper .swiper-slide .textBox {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    text-align: left;
+}
+.function .swiper .swiper-slide .textBox p { font-size: 14px; color: #aeb0b4; }
+.function .swiper .swiper-slide .textBox p b { font-size: 20px; color: #fff; display: block; margin-bottom: 8px; }
+/* 이미지 위치 조정 */
+
+
+/* ================================================== */
+/* ★ 구간별 수치 적용 (주신 데이터 반영) ★ */
+/* ================================================== */
+
+/* [1] 모바일 (390px 기준 ~) */
+/* width: calc(342px * 1 + 24px) */
+.function .inner { padding-left: 24px; }
+.function .swiper { 
+    padding-left: 24px; 
+    padding-right: 24px; /* ★ 여기 추가! 마지막 카드 뒤 공간 확보 */
+}
+.function .inner .page-title { font-size: 32px; }
+
+.function .swiper .swiper-slide {
+    width: 285px !important;
+    height: 577px !important;
+    margin-right: 24px !important; /* Gap */
+}
+.function .swiper .swiper-slide .textBox {text-align: center; transform: translate(-50%, -50%); left: 50%; top: 15%; width: 100%;}
+ .function .swiper .swiper-slide.a img {
+    /* background: blue; */ /* 누끼 이미지이므로 배경색 제거 */
+    position: absolute; 
+    top: 73%; 
+    left: 55%; 
+    transform: translate(-50%, -50%); /* 기본 중앙 정렬 */
+    width: 120%; /* 필요시 크기 조절 (예: 120%) */
+    height: auto;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.b img {
+    
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.c img {
+    position: absolute;
+    top: 63%;
+    left: 69%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 60%;
+}
+
+.function .swiper .swiper-slide.d img {
+    
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    width: auto;
+    height:110%;
+    object-fit: contain;
+}
+/* [2] 태블릿 2 (768px 이상 ~) */
+/* width: calc(678px * 1 + 24px) */
+@media screen and (min-width: 768px) {
+    .function .inner { padding-left: 45px; }
+    .function .swiper { padding-left: 45px;
+        padding-right: 45px; /* ★ 여기 추가! 마지막 카드 뒤 공간 확보 */
+   }
+    .function .inner .page-title { font-size: 40px; }
+
+    .function .swiper .swiper-slide {
+        width: 580px !important;
+        height: 577px !important;
+        margin-right: 24px !important; /* Gap */
+    }
+    .function .swiper .swiper-slide.a img {
+    /* background: blue; */ /* 누끼 이미지이므로 배경색 제거 */
+    position: absolute; 
+    top: 59%; 
+    left: 36%; 
+    transform: translate(-50%, -50%); /* 기본 중앙 정렬 */
+    width: 75%; /* 필요시 크기 조절 (예: 120%) */
+    height: auto;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.b img {
+    
+    position: absolute;
+    top: 79%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 110%;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.c img {
+    position: absolute;
+    top: 52%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80%;
+}
+
+.function .swiper .swiper-slide.d img {
+    
+    position: absolute;
+    top: 6%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 150%;
+    object-fit: contain;
+}   
+    .function .swiper .swiper-slide .textBox { width: 70%;}
+    .function .swiper .swiper-slide.a .textBox { top:25%; left: 80%;  text-align: left; }
+    .function .swiper .swiper-slide.b .textBox {text-align: left; top: 50%; left: 8%; transform: translateY(-50%); }
+    .function .swiper .swiper-slide.c .textBox { top: 25%; left: 50%; text-align: left;}
+    .function .swiper .swiper-slide.d .textBox { top: 50%; right: 8%; left: auto; text-align: right; transform: translateY(-50%); }
+}
+
+/* [3] 태블릿 1 (1024px 이상 ~) */
+/* width: calc(902px * 1 + 24px) */
+@media screen and (min-width: 1024px) {
+    .function .inner { padding-left: 61px; }
+    .function .swiper { padding-left: 61px; 
+        padding-right: 61px; /* ★ 여기 추가! 마지막 카드 뒤 공간 확보 */
+   }
+    .function .inner .page-title { font-size: 50px; }
+
+    .function .swiper .swiper-slide {
+        width: 780px !important;
+        height: 740px !important;
+        margin-right: 24px !important; /* Gap */
+    }
+    .function .swiper .swiper-slide.a img {
+    /* background: blue; */ /* 누끼 이미지이므로 배경색 제거 */
+    position: absolute; 
+    top: 59%; 
+    left: 36%; 
+    transform: translate(-50%, -50%); /* 기본 중앙 정렬 */
+    width: 75%; /* 필요시 크기 조절 (예: 120%) */
+    height: auto;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.b img {
+    
+    position: absolute;
+    top: 79%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 120%;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.c img {
+    position: absolute;
+    top: 52%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80%;
+}
+
+.function .swiper .swiper-slide.d img {
+    
+    position: absolute;
+    top: 6%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 150%;
+    object-fit: contain;
+}
+    .function .swiper .swiper-slide .textBox { width: 70%;}
+    .function .swiper .swiper-slide.a .textBox { top:25%; left: 80%;  text-align: left; }
+    .function .swiper .swiper-slide.b .textBox {text-align: left; top: 50%; left: 8%; transform: translateY(-50%); }
+    .function .swiper .swiper-slide.c .textBox { top: 25%; left: 50%; text-align: left;}
+    .function .swiper .swiper-slide.d .textBox { top: 50%; right: 8%; left: auto; text-align: right; transform: translateY(-50%); }
+    /* 텍스트 크기 조금 키움 */
+    .function .swiper .swiper-slide .textBox p { font-size: 18px; }
+    .function .swiper .swiper-slide .textBox p b { font-size: 24px; }
+}
+
+/* [4] PC (1920px 기준 - 실제 적용은 1400px 이상부터 권장) */
+/* width: calc(1300px * 1.2 + 48px) */
+/* Offset: 271px */
+@media screen and (min-width: 1400px) { /* 1300px 카드가 들어가려면 화면이 커야해서 1400으로 잡음 */
+    
+    .function .inner { padding-left: 271px; }
+    .function .swiper { 
+        padding-left: 271px; 
+        padding-right: 271px; 
+        /* ★ 요청하신 1.2개만 보이게 하는 계산식 적용 ★ */
+        /* 슬라이더 전체 너비를 제한해서 오른쪽을 잘라버리는 효과 */
+        width: calc(271px + 1300px + 48px + (1300px * 0.2)); 
+        max-width: 100%;
+        box-sizing: border-box; /* 패딩 포함 계산 방지 */
+    }
+    
+    .function .inner .page-title { font-size: 60px; }
+
+    .function .swiper .swiper-slide {
+        width: 1300px !important;
+        height: 675px !important;
+        margin-right: 48px !important; /* Gap */
+    }
+    .function .swiper .swiper-slide.a img {
+    /* background: blue; */ /* 누끼 이미지이므로 배경색 제거 */
+    position: absolute; 
+    top: 59%; 
+    left: 31%; 
+    transform: translate(-50%, -50%); /* 기본 중앙 정렬 */
+    width: 49%; /* 필요시 크기 조절 (예: 120%) */
+    height: auto;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.b img {
+    
+    position: absolute;
+    top: 79%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 150%;
+    object-fit: contain;
+}
+
+.function .swiper .swiper-slide.c img {
+    position: absolute;
+    top: 34%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 130%;
+}
+
+.function .swiper .swiper-slide.d img {
+    
+    position: absolute;
+    top: 6%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 150%;
+    object-fit: contain;
+}
+    /* PC 텍스트 스타일 및 위치 복구 (디자인 시안) */
+    .function .swiper .swiper-slide .textBox p { font-size: 18px; }
+    .function .swiper .swiper-slide .textBox p b { font-size: 32px; margin-bottom: 15px; }
+
+    .function .swiper .swiper-slide .textBox { width: 70%;}
+    .function .swiper .swiper-slide.a .textBox { top:25%; left: 80%;  text-align: left; }
+    .function .swiper .swiper-slide.b .textBox {text-align: left; top: 50%; left: 8%; transform: translateY(-50%); }
+    .function .swiper .swiper-slide.c .textBox { top: 25%; left: 44%; text-align: left;}
+    .function .swiper .swiper-slide.d .textBox { top: 50%; right: 8%; left: auto; text-align: right; transform: translateY(-50%); }
+}
+/* 공통요소 */
+.product_detail {
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.product_detail .inner {
+    position: relative; 
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+.product_detail .inner img {
+    width: 100%;   
+}
+.product_detail .desc {color: #6C7382;}
+.product_detail .desc b {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    /* 배경 두 개 겹치기: 1.흰색(채워질 색), 2.회색(기본 색) */
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#6C7382, #6C7382);
+    background-repeat: no-repeat;
+    background-size: 0% 100%, 100% 100%; /* 흰색은 0%, 회색은 100%로 시작 */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.product_detail .inner .textBox {position: absolute;}
+.product_detail .inner .textBox .main-title {margin-bottom: 35px;}
+/* section a */
+.product_detail.a .inner .textBox {
+    position: absolute;
+    right: 115px; 
+    top: 149px; 
+    text-align: right;    
+}
+.product_detail.a .inner .textBox .main-title .space {display: block; padding-right: 26px ;}
+
+/* section e */
+/* === [Section E] 애니메이션 전용 스타일 (수정본) === */
+
+/* 1. 배경을 꽉 채우고 스크롤 고정할 준비 */
+.product_detail.e {
+    display: block; /* flex 제거 */
+    position: relative;
+ width: 100%;
+    height: 100vh; /* 화면 높이만큼 꽉 채움 */
+    background-color: #000;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. 내부 컨텐츠를 수직 중앙 정렬하기 위한 설정 */
+.product_detail.e .inner {
+    position: relative;
+    width: 88%;
+    height: 100%; /* 부모 높이 상속 */
+    margin: 0 auto;
+}
+
+/* 3. 텍스트 박스 위치 (화면 왼쪽 중앙) */
+.product_detail.e .inner .textBox {
+    position: absolute;
+    left: 0; 
+    top: 15%; /* 화면 세로 중앙 */
+    transform: translateY(0); /* 정확한 중앙 보정 */
+    z-index: 20;
+    text-align: left;
+    width: 40%; /* 텍스트 영역 너비 제한 */
+}
+
+/* 4. 드로잉 스테이지 위치 (화면 오른쪽, 약간 위로) */
+.drawing-stage {
+    position: absolute;
+    bottom: -25%; /* 화면 세로 중앙보다 살짝 위 */
+    left: -5%; /* 화면 오른쪽 */
+    transform: translateY(-50%); /* 세로 중앙 보정 */
+    width: 80%; /* 화면의 65% 차지 */
+     
+    aspect-ratio: 1413 / 470; /* 비율 유지 */
+    z-index: 10;
+}
+
+/* SVG 설정 */
+.drawing-stage svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* 점 초기 상태 (숨김) */
+#dotPath {
+    opacity: 0;
+}
+
+/* 펜 이미지 설정 */
+
+.pen-image {
+    width: 12%; /* 기존 15% -> 12% (글씨랑 비율을 맞추기 위해 줄임) */
+    min-width: 80px;  /* 최소 크기도 살짝 줄임 */
+    max-width: 180px; /* 최대 크기도 줄임 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    pointer-events: none;
+}
+/* section b */
+.product_detail.b .inner .textBox {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 116px; 
+    width: 100%;
+}
+.product_detail.b .inner .textBox .main-title span {
+    color: #ccc;
+}
+/* section c */
+.product_detail.c .inner .textBox {
+    text-align: left;
+    left: 128px; 
+    top: 145px; 
+    width: 100%;
+}
+
+/* section d */
+.product_detail.d .inner .textBox {
+    position: absolute;
+    text-align: center;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    width: 100%;
+    z-index: 2; /* 텍스트가 오버레이 위에 오도록 z-index 추가 */
+}
+.product_detail.d {height: 100vh; margin: 0;}
+.product_detail.d .inner .videowrap {filter: brightness(50%);}
+.product_detail.d .inner .videowrap video {width: 100vw; height: 100vh; object-fit: cover;}
+.product_detail.d .inner .textBox .sub-title {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+        footer {color: #fff; background: #1d1d1f; padding: 84px 189px 162px;}
+        .footer-inner {width: 100%; }
+        .footer-inner .footer-top {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 131px;}
+        .footer-inner .footer-top .top-leftbox .family-site {width: 287px; display: flex; justify-content: space-between; border-bottom: 2px solid #fff; padding: 13px; margin-bottom: 19px;}
+        .footer-inner .footer-top .top-leftbox .family-site a {display: block; font-size: 18px;}
+        .footer-inner .footer-top .left-box .family-site img {width: 16px;}
+        .footer-inner .footer-top .top-rightbox {width: 100%;}
+        .footer-inner .footer-top .top-rightbox .gnb {display: flex; justify-content: space-between; font-size: 24px; margin-bottom: 38px;  width: 70%;}
+
+        .footer-inner .footer-top .top-rightbox .sns-icon {display: flex; justify-content: right; gap: 10px;}
+        .footer-inner .footer-top .top-rightbox .sns-icon img {width: 40px}
+        .footer-inner .footer-bottom {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+        .footer-inner .footer-bottom .bottom-leftbox {width: 287px; font-size: 14px;}
+        .footer-inner .footer-bottom .bottom-leftbox .links {display: flex; justify-content: space-between; margin-bottom: 10px;}
+        .footer-inner .footer-bottom .bottom-leftbox .links li {font-size: 14px; letter-spacing: -0.03em;}
+        .footer-inner .footer-bottom .bottom-leftbox .links li:nth-child(1) {font-weight: bold;}
+        .footer-inner .footer-bottom .bottom-leftbox .address {font-size: 14px; margin-bottom: 10px;}
+        .footer-inner .footer-bottom .bottom-leftbox .contact-number {display: flex; gap: 6px;}
+        .footer-inner .footer-bottom .bottom-rightbox {width: 100%; font-size: 14px; display: flex; align-items: baseline; margin-top: auto; justify-content: space-between;}
+        .footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 37px;}
+        .footer-inner .footer-bottom .bottom-rightbox img {width: 121px; height: 24px;} 
+/* menu Open */
+.menuOpen{
+  position: fixed;
+  top: 0;
+  left: 0;                   /* right 말고 left 기준으로 */
+  width: 100%;
+  height: 100vh;
+  background: #1d1d1f;
+  z-index: 999;
+
+  transform: translateX(100%);    /* 👈 오른쪽 밖 */
+  transition: transform 0.45s ease;
+
+  /* 클릭 막기 + 스크린리더/탭 방지용 */
+  pointer-events: none;
+}
+
+.menuOpen.on{
+  transform: translateX(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menuOpen .top {
+  width: 100%;
+  padding: 25px 31px;
+  position: relative;
+        }
+.menuOpen .top .closeBtn { display: block; width: 24px; height: 24px; position: absolute; top: 50%; transform: translateY(-50%); right: 30px; }
+.menuOpen .top .closeBtn span {display: block; background: #fff; width: 24px; height: 3px; position: absolute; top: 50%; transform: translateY(-50%); border-radius: 3px;}
+.menuOpen .top .closeBtn span.a {transform: rotate(45deg);}
+.menuOpen .top .closeBtn span.b {transform: rotate(-45deg);}
+
+.menuOpen .list {padding: 60px 48px; }
+.menuOpen .list li { margin-bottom: 72px;}
+.menuOpen .list li:last-child {margin-bottom: 0;}
+.menuOpen .list li a {color: #fff; display: block; width: 100%; height: 100%; font-weight: bold; font-size: 24px; opacity: 0.5; transition: all 0.3s;}
+.menuOpen .list li:hover a {opacity: 1; transition: all 0.3s;}

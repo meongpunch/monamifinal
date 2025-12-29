@@ -1,0 +1,273 @@
+@media screen and (max-width: 1400px) {
+        .footer-inner .footer-top .top-rightbox .gnb {width: 100%; font-size: 20px;} 
+        .footer-inner .footer-top .top-leftbox {width: 100%;}
+            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}  
+            .product_detail.a .inner img {width: 140%;}
+            .drawing-stage {bottom: -15%;}
+        }
+@media screen and (max-width: 1300px){
+    .innerHeader {
+        width: 80%;
+    }
+} 
+@media screen and (max-width: 1024px) {
+    
+    /* === [1] 공통 레이아웃 재설정 === */
+    .wrap {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .inner {
+        width: 88%; /* 좌우 여백 확보 */
+    }
+
+    /* 폰트 크기 축소 */
+    .main-title {
+        font-size: 6.8vw; /
+    }
+    
+    .page-title {
+        font-size: 4.7vw; 
+    }
+    
+    .sub-title {
+        font-size: 2.3vw;
+    }
+
+    .desc {
+        font-size: 18px;
+        word-break: keep-all; 
+    }
+
+    section {
+        margin: 200px 0; 
+    }
+
+    .innerHeader {
+        width: 100%;
+        padding: 0 31px;
+    }
+    
+    
+
+    
+    .visual .inner {
+        width: 90%;
+        bottom: 5%;
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+
+
+    /* === [5] Product Detail 공통 (절대 위치 해제 -> 세로 배치) === */
+    .product_detail {
+        height: 100vh;
+    }
+
+    .product_detail .inner {width: 100%; height: 100%; position: relative; justify-content: center;}
+    .product_detail .inner .textBox {position: absolute;}
+    /* 텍스트 박스 강제 위치 초기화 및 중앙 정렬 */
+    .product_detail.a .inner .textBox{
+        text-align: right; 
+        top: 10%;
+        right: 7%;
+    }
+    
+    .product_detail.a .inner img {width: 200%; height: auto; object-fit:contain; position: absolute; bottom: -15% ; left: -20%; }
+    
+    /* ===  Section (사각사각 애니메이션) === */
+    .product_detail.e {
+        height: 100vh; /* 고정 스크롤 효과 유지를 위해 높이 유지 */
+    }
+    
+    /* 텍스트를 위로 */
+    .product_detail.e .inner .textBox {
+        top: 15%;  width: 100%; 
+    }
+
+    /* 애니메이션 스테이지 조정 */
+    .drawing-stage {
+        width: 100%; /* 화면 꽉 차게 */
+        left: 0;
+        transform: none; /* 회전 제거 (좌표 꼬임 방지) */
+        right: auto;
+        bottom: 15%;
+       /* 가로 중앙 정렬 */
+        padding-top: 0;
+        margin-top: 0;
+    }
+    
+    .pen-image {
+        width: 25%; /* 펜 크기 축소 (너무 크면 펜촉 위치가 어긋남) */
+    }
+
+    /* section b */
+    .product_detail.b { height: 100vh;}
+    .product_detail.b .inner{ height: 100vh;}
+    .product_detail.b .inner img {height: 100%; width: 150%; position: absolute; transform: translateX(-50%); left: 50%; object-fit: cover; bottom: -10%;}
+
+     /* section c */
+    .product_detail.c { height: 100vh;}
+    .product_detail.c .inner{ height: 100vh;}
+    .product_detail.c .inner .textBox {left: 7%; top: 10%;}
+    .product_detail.c .inner img {height: auto; width: 160%; object-fit: contain; position: absolute; transform: translateX(-50%); left: 20%; bottom: -10%;}
+
+    
+    /* === [7] Section D (동영상) === */
+    .product_detail.d {
+        height: 100vh; ;
+    }
+    .product_detail.d .inner{
+        background: red;
+    }
+    .product_detail.d .inner .textBox {
+        top: 50% ;
+        transform: translate(-50%,-50%) 
+    }
+    /* footer */
+    footer {padding: 85px 61px;}
+            .footer-inner {width: 100%; height: 100%;  margin: 0;}
+            .footer-inner .footer-top {width: 100%;  flex-wrap: wrap; margin-bottom: 44px;}
+            .footer-inner .footer-top .top-leftbox {width: 100%;}
+            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}
+            .footer-inner .footer-top .top-rightbox {width: 100%;}
+            .footer-inner .footer-top .top-rightbox .gnb { width: 100%; }
+            .footer-inner .footer-bottom .bottom-leftbox {margin-bottom: 63px;}
+            .footer-inner .footer-bottom .bottom-rightbox  {justify-content: space-between; width: 100%;}
+}
+
+@media screen and (max-width: 768px) {
+
+    .visual .main-title {
+        font-size: 58px; 
+    }
+
+    .product_detail .main-title {
+        font-size: 7.6vw; 
+    }
+    .page-title {
+        font-size: 6.3vw; 
+    }
+    
+    .sub-title {
+        font-size: 22px;
+    }
+
+    .desc {
+        font-size: 18px;
+        word-break: keep-all; 
+    }
+
+    section {
+        margin: 100px 0; 
+    }
+
+    /* [수정] visual 이미지 중앙 정렬 및 반응형 크기 조정 */
+    .visual {
+        display: flex;
+        align-items: center; /* 수직 중앙 정렬 */
+        justify-content: center; /* 수평 중앙 정렬 */
+    }
+    .visual .inner {top: 50%; transform: translate(-50%,-47%); text-align: center; left: 50%;  justify-content: baseline; align-items: center; height: 75%}
+    .visual > img {
+        width: 200%; height: auto; object-fit: cover; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);
+    }
+
+    /* header */
+    .innerHeader {position: relative;}
+    .innerHeader .gnb {display: none; }
+    .innerHeader .menu {display: block; width: 24px; height: 24px; position: absolute; top: 50%; transform: translateY(-50%); right: 31px; cursor: pointer;}
+    .innerHeader .menu span {display: block; background: #fff; width: 24px; height: 3px; position: absolute; border-radius: 3px;}
+    .innerHeader .menu span.a {top: 20%;}
+    .innerHeader .menu span.b {bottom: 20%;}
+    /* section a */
+    .product_detail.a .inner img {top: 20%;}
+    /* section b */
+    .product_detail.b .inner img {height: 100%; width: 150%; position: absolute; transform: translateX(-50%); left: 50%; object-fit: contain; bottom: -10%;}
+    .product_detail.c .inner img {top: 30%;}
+     /* footer */
+ 
+            .footer-inner .footer-top .top-rightbox {width: 100%; flex-wrap: wrap;}
+            .footer-inner .footer-top .top-rightbox .gnb {width: 100%; flex-wrap: wrap;}
+            .footer-inner .footer-top .top-rightbox .gnb li {width: 100%; margin-bottom: 8px; padding: 10px 0;}
+            .footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 0; width: 100%; margin-bottom: 10px; font-size: 12px;}
+}
+
+@media screen and (max-width: 600px) {
+    br{display: none;}
+    .function {
+        margin: 0; 
+        height: 80vh;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    /* section a */
+    .product_detail.a .inner img {top: 30%; left: 0;}
+    .product_detail.b .inner .textBox {width: 90%;}
+    .product_detail.c .inner img {top: 40%;}
+    .product_detail.c .inner .textBox .main-title span {display: block;}
+    .product_detail.c .inner .textBox {width: 80%;}
+    .product_detail.d .inner .textBox .sub-title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .product_detail.d .inner .textBox .main-title br {display: block;}
+    
+    /* footer */
+            footer {padding: 82px 24px;}
+            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0; width: 100%; margin-bottom: 19px;}
+            .footer-inner .footer-bottom .bottom-rightbox {flex-wrap: wrap;}
+            .footer-inner .footer-top .top-rightbox .sns-icon {justify-content: left;  
+}
+}
+@media screen and (max-width: 470px) {
+    .visual .main-title {
+        font-size: 35px; }}
+
+@media screen and (max-width: 390px) {
+    section {margin: 0;}
+    .visual .btn {font-size: 16px;}
+    .product_detail {text-align: center;}
+    .product_detail .inner .textBox {width: 90%;}
+    .product_detail.a .inner {text-align: center;}
+    .product_detail.a .inner .textBox {text-align: center;}
+    .product_detail.a .inner .textBox .main-title .space {padding:0;}
+    .main-title {
+        font-size: 36px; }
+    .product_detail.a .inner .textBox .main-title .space {display: block;}
+    /* Section C */
+    .product_detail.c .inner .textBox {
+        text-align: center;
+        left: 0; top: 10%;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .page-title {
+        font-size: 28px;} 
+    
+    
+
+    .desc {
+        font-size: 18px;
+        word-break: keep-all; }
+    /* Section E (글씨 쓰기) */
+    .product_detail.e .inner .textBox {
+        text-align: center;
+        width: 100%; left: 0; top: 12%;
+        padding: 0 20px;
+    }
+    .drawing-stage { bottom: 20%; }
+    .pen-image { width: 20%; }
+
+    
+    .visual .inner {height: 60%;}
+    .visual > img {top: 60%; width: 220%;}
+    /* Footer */
+    footer { padding: 50px 20px; }
+    .menuOpen .list {padding: 31px;}
+}

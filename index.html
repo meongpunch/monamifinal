@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monami-Home</title>
+        <!--css 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reponsive_index.css">
+    <!-- 외부 링크 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 스크립트연결 -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- 작성 script 연결  -->
+    <script src="js/index.js"></script>
+    <script src="js/collabo.js" defer></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="intro">
+            <!-- header -->
+        <header id="siteHeader">
+            <div class="innerHeader">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="codingimg/header_logo.svg" alt="흰색 모나미 로고">
+                    </a>
+                </h1>
+                <ul class="gnb">
+                    <li><a href="sub-page/01.brandstory/brandstory.html">BRAND STORY</a></li>
+                    <li><a href="sub-page/02.product/product.html">PRODUCT</a></li>
+                    <li><a href="sub-page/04.journal/journal.html">JOURNAL</a></li>
+                    <li><a href="http://www.monamicosmetics.com/" target="_blank">FAMILY SITE</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+                <div class="menu">
+                    <span class="a"></span>
+                    <span class="b"></span>
+                </div>
+            </div>
+            <div class="menuOpen">
+                <div class="top">
+                    <a class="closeBtn">
+                        <span class="a"></span>
+                        <span class="b"></span>
+                    </a>
+                </div>
+            <ul class="list">
+                    <li><a href="sub-page/01.brandstory/brandstory.html">BRAND STORY</a></li>
+                    <li><a href="sub-page/02.product/product.html">PRODUCT</a></li>
+                    <li><a href="sub-page/04.journal/journal.html">JOURNAL</a></li>
+                    <li><a href="http://www.monamicosmetics.com/" target="_blank">FAMILY SITE</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="intro-line">
+    <!-- 중앙 기준 SVG -->
+    <svg class="center-svg" width="10" height="1200" viewBox="0 0 10 1200">
+    <!-- 시작 점 -->
+    <circle cx="5" cy="5" r="4" fill="#000" />
+
+    <!-- 내려가는 선 -->
+    <path
+    id="linePath"
+    d="M5 10 V 1190"
+    fill="none"
+    stroke="#000"
+    stroke-width="3"
+    stroke-linecap="round"/>
+    </svg>
+            <div class="mainText">
+                <div class="textAni">
+                <h1></h1>
+                <p class="text" data-text="쓰고"></p>
+                <p class="text" data-text="남기고"></p>
+                <p class="text" data-text="표현하는"></p>
+                <p class="text" data-text="모든 시간 위에"></p>
+                </div>  
+            </div>
+        </section>
+
+        <!-- intro-video -->
+        <section class="intro-video">
+            <div class="videoWrap">
+                <video autoplay muted loop playsinline><source src="codingimg/visual1.mp4"></video>
+            </div>
+            <div class="video-linear">
+            </div>
+            <div class="videotxt">
+                <p><img src="codingimg/logo.png" alt="모나미로고"></p>
+                <h2 class="main-title">당신의 일상을<br>그립니다.</h2>
+                <p class="sub-txt">펜을 쥔 순간부터 생각은 흐르고, 감정은 형태를 갖습니다. <br> 모나미는 그 시작에 항상 함께해 왔습니다.</p>
+            </div>
+        </section>
+        </div>
+
+
+<!-- intro-man -->
+<section class="man" id="man">
+<!-- ✅ 기준 무대(= 이 컨테이너를 통째로 이동) -->
+<div class="man-stage">
+
+    <!-- 스크롤 선 레이어 (텍스트 박스 아래로) -->
+    <div class="scroll-line-layer" aria-hidden="true">
+    <div class="scroll-line-svg">
+        <svg class="scroll-line" width="579" height="1300" viewBox="0 0 500 1737" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            id="scroll-path"
+            class="scroll-line-path"
+            d="M200.241 3.14844C-56.2585 143.148 -53.0652 812.789 137.078 987.148C179.105 1025.69 221.848 1034.3 256.674 1028.34C316.735 1018.05 353.247 964.414 321.917 946.148C284.604 924.394 252.245 965.667 256.674 1028.34C259.269 1065.05 274.491 1109.11 308.743 1152.15C428.129 1302.15 607.743 1273.65 618.743 1270.95"
+            stroke="#bcbcbc" stroke-linecap="round" 
+            stroke-width="5"/>
+        </svg>
+    </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="inner">
+        <div class="textBox">
+            <h2 class="main-title">
+            <span class="text-line">모든 순간을 쓰고<span class="c">,</span></span><br>
+            <span class="text-line">나만의 선으로<span class="c">,</span></span><br>
+            <span class="text-line">미래를 그립니다.</span>
+            </h2>
+            <p class="sub-txt">기록에서 표현으로, 쓰기에서 그리기로 이어지는 흐름 속에서 <br> 모나미는 언제나 같은 기준으로 사람들의 손끝에서 함께해 왔습니다.
+            </p>
+        </div>
+    </div>
+
+    <!-- 이미지 -->
+    <div class="image-container" aria-label="intro man image">
+        <img src="codingimg/man-1.png" alt="남자의 실루엣" class="img-base" />
+        <img src="codingimg/man-2.png" alt="남자의 빛 비치는 모습" class="img-light" />
+    </div>
+
+</div>
+</section>
+
+        
+        <!-- collabo -->
+        <section class="collabo01">
+        <div class="inner">
+            <div class="textBox">
+                <p class="sub-title">Collaboration</p>
+                <h2 class="main-title">어떤 브랜드와 만나도<br>모나미답게.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="collabo02">
+        <div class="inner">
+            <h2 class="page-title">
+            <span class="text-line">모나미가</span>
+            <span class="text-line break">기록을 확장하는 방식.</span></h2>
+                <a href="https://mpms.monami.com/promotion/"target="_blank" class="btn">콜라보 구경가기 <img src="codingimg/arrow-right.svg" alt="오른쪽 화살표"></a>
+        </div>
+        <!-- swiper -->
+        <div class="swiper collabo">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-1.svg" alt="야구 콜라보 스티커">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>LG TWINS</p>
+                            <p class="desc ">야구장의 열기를 일상으로 옮기는 방법.<br>
+                            LG트윈스의 에너지를 담아<br>
+                            응원과 기록의 힘을 하나로 엮었습니다.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>LG TWINS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-2.svg" alt="대한항공 콜라보 문구세트">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>KOREAN AIR</p>
+                            <p class="desc ">떠나는 순간의 설렘과,<br>
+                            돌아와 남길 기록을 위해<br>
+                            모나미는 당신의 여정을 위해 준비했습니다.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>KOREAN AIR</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-3.svg" alt="우주 콜라보 마그넷">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>KBSI</p>
+                            <p class="desc ">KBSI와 모나미의 만남<br>
+                            가장 작은 기록이<br>
+                            거대한 발견으로 이어지도록.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>KBSI</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-4.svg" alt="한우리 콜라보 문구용 집게">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>HANWOORI</p>
+                            <p class="desc t">읽고, 생각하고, 남기는 힘.<br>
+                            한우리의 배움과 모나미의 기록이 <br>
+                            당신의 하루에 함께합니다.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>HANWOORI</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-5.svg" alt="롤 콜라보 틴케이스">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>RIOT GAMES</p>
+                            <p class="desc ">당신의 승리를 소장하는 가장 완벽한 방법. <br>
+                            모나미가 담을 당신의 세계,<br>
+                            또 다른 전설이 됩니다.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>RIOT GAMES</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://mpms.monami.com/promotion/m12_view.php?c_code=&idx=314" target="_blank">
+                        <div class="imgBox">
+                            <img src="codingimg/collabo-6.svg" alt="오레오 콜라보 키링">
+                        </div>
+                        <div class="hoverBox">
+                            <p class="sub-title">MONAMI<br>X<br>OREO</p>
+                            <p class="desc ">오레오의 기쁨 한 조각,<br>
+                            모나미의 여운 한 줄,<br>
+                            당신의 순간을 더 특별하게 만듭니다.</p>
+                        </div>
+                        <div class="collabo-mobile-box">
+                            <p class="m-title">MONAMI<br>X<br>OREO</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- family -->
+    <section class="family-1">
+        <div class="sticky-wrapper">
+            <div class="scroll-line-container">
+            <svg width="1150" height="1995" viewBox="0 0 1150 1995" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="family-path"
+                d="M-600.3528 -2C-60.8138 414 -53.3154 1499 783.855 1317C990.849 1272 857.349 1145.5 809.849 1237C780.384 1293.76 751.327 1460 815.849 1538C928.349 1674 1081.35 1550 1139.35 1658.5C1192.37 1757.69 1004.35 2059.67 795.349 2147.5" stroke="#bcbcbc" stroke-width="7"/>
+                <!-- 선의 시작점은 "M-숫자 부분을 고칠 것. 값이 작을수록 왼쪽에서 시작함" -->
+            </svg>
+            </div>
+                <div class="image-container">
+                    <img src="codingimg/family-woman-4.png" alt="여자의 어두운 실루엣" class="img-base" />
+                    <img src="codingimg/family-woman-2.png" alt="여자의 빛 비치는 모습" class="img-light" />
+                </div>
+
+            <div class="inner">
+                <div class="text-box">
+                <p class="sub-title">Family Site</p>
+                <p class="main-title"><span class="text-line"> 하나의 기준으로<br>다양한 세계를.</span></p>
+                <p class="desc">색을 구현해 온 모나미의 기술로<br>아름다움을 표현하는 영역을 확장하였습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- section.family-card -->
+    <section class="family-2">
+        <div class="inner">
+            <p class="page-title"><span class="text-line">일상에서 만나는 모나미.</span></p>
+        <ul class="list">
+            <li class="a">
+                <p class="img">
+                    <img src="codingimg/family-card1.svg" alt="립스틱"></p>
+                <p class="top-txt">코스메틱</p>
+                <div class="btm-txt">색상을 확장하다.
+                <a href="http://www.monamicosmetics.com/" target="_blank"><p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                <li class="b">
+                    <p class="img">
+                    <img src="codingimg/family-card2.svg" alt="필기구"></p>
+                    <p class="top-txt">모나미몰</p>
+                    <div class="btm-txt">철학을 실현하다.
+                        <a href="https://brand.naver.com/monami"target="_blank">
+                    <p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                <li class="c">
+                    <p class="img">
+                    <img src="codingimg/family-card3.svg" alt="아이들"></p>
+                    <p class="top-txt">모나르떼</p>
+                    <div class="btm-txt">창의적인 사고를 키우다.
+                        <a href="https://www.mon-arte.com/"target="_blank">
+                    <p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                <li class="d">
+                    <p class="img">
+                    <img src="codingimg/family-card4.svg" alt="설계도"></p>
+                    <p class="top-txt">플라맥스</p>
+                    <div class="btm-txt">표현을 가능하게 하다.
+                        <a href="http://www.plamaxkorea.com/"target="_blank">
+                    <p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                <li class="e">
+                    <p class="img">
+                    <img src="codingimg/family-card5.svg" alt="다양한 펜"></p>
+                    <p class="top-txt">컨셉스토어</p>
+                    <div class="btm-txt">표현을 경험하다.
+                        <a href="https://brand.naver.com/monami/shoppingstory/detail?id=5000882144&page=1"target="_blank">
+                    <p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                <li class="f">
+                    <p class="img">
+                    <img src="codingimg/family-card6.svg" alt="그림 그리는 모습"></p>
+                    <p class="top-txt">모나미 미술대회</p>
+                    <div class="btm-txt">창작의 장을 열다.
+                        <a href="https://artcontest.monami.com/w/main.do"target="_blank">
+                    <p class="btn"><img src="codingimg/family-btn.svg" alt="바로가기 버튼"></p></a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </section>
+
+<!-- product-youtube -->
+<section class="product-youtube">
+    <div class="scroll-line-layer" aria-hidden="true">
+        <div class="scroll-line-svg">
+            <svg class="scroll-line" width="781" height="3362" viewBox="0 0 781 3362" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="product-youtube-path" class="scroll-line-path"
+                    d="M780.054 1.89702C234.056 -16.5703 31.2291 608.934 676.056 1935.89C916.615 2430.93 354.663 2827.54 386.556 2678.4 C422.056 2512.4 780.056 2805.67 542.554 3024.4C406.057 3150.1 -134.447 3316.93 150.5512 3555.00"
+                    stroke="#bcbcbc" stroke-linecap="round" stroke-width="7"/>
+            </svg>
+        </div>
+    </div>
+
+    <section class="product-1">
+        <div class="inner">
+            <div class="title-box">
+                <p class="sub-title">Product</p>
+                <h2 class="main-title"><span class="text-line">쓰다를</span><br>
+                <span class="text-line">넘어 그리다.</span></h2>
+                <p class="sub-txt">
+                    점이 선이 되고, 선이 면이 되는 것처럼. <br>
+                    모나미의 다양한 도구로 당신만의 창작을 시작해 보세요.
+                </p>
+            </div>
+        </div>
+        <p class="img"><img src="codingimg/product-1.svg" alt="product img"></p>
+
+    </section>
+    <section class="product-2">
+        <div class="inner">
+            <div class="title-box">
+                <h2 class="page-title">
+                    <span class="text-line">이제<span class="c">, </span><br>당신의 모나미를 만나보세요.</span>
+                </h2>
+                <a class="btn" href="sub-page/02.product/product.html">더 구경하기<img src="codingimg/arrow-right.svg" alt="더보기 버튼"></a>
+            </div>
+            <ul>
+                <li>
+                    <a href="sub-page/03.product-detail/product-detail.html">
+                        <p class="card-title">monami 프리미엄 잉크</p>
+                        <p class="desc">
+                            다양한 색상을 제공하는 고품질의 만년필 잉크 <br>
+                            ‘자연'에서 모티브를 가져온 12가지의 감성적 잉크 컬러 <br>
+                            잉크방울을 형상화한 차별화된 디자인
+                        </p>
+                        <p class="img"><img src="codingimg/product-2.svg" alt="잉크병"></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sub-page/03.product-detail/product-detail.html">
+                        <p class="card-title">monami 프리미엄 레드</p>
+                        <p class="desc">
+                            153ID 시그니처 느낌을 강조한 EF촉 만년필 <br>
+                            금속 재질의 캡과 배럴로 고급스러워진 디자인 <br>
+                            필기 시 뒤로 쏠리는 현상을 최소화한 저중심 무게 구조
+                        </p>
+                        <p class="img">
+                            <span class="img-wrap"><img src="codingimg/product-3.svg" alt="프리미엄 펜"></span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="youtube">
+        <div class="inner">
+            <div class="top">
+                <div class="top-txtBox">
+                    <p class="sub-title">Youtube</p>
+                    <h2 class="main-title"><span class="text-line">모나미가 만들어 온<br>브랜드의 이야기.</span></h2>
+                </div>
+                <div class="bottom-txtBox">
+                    <p class="sub-txt">모나미의 영감<span>,</span> 창작의 순간<span>,</span> 브랜드의 이야기를 유튜브에서 경험해 보세요.<br>당신의 감성과 아이디어가 더 넓은 세상으로 퍼져 나갑니다.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>
+   <section class="youtube02">
+        <div class="top">
+            <h2 class="page-title"><span class="text-line">모나미의 시선.</span></h2>
+            <a href="https://www.youtube.com/monami_official" target="_blank" class="btn">유튜브 바로가기<img src="codingimg/arrow-right.svg" alt="오른쪽 화살표"></a>
+        </div>
+
+        <div class="swiper youtube">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="https://www.youtube.com/monami_official" target="_blank">
+                        <div class="img-box">
+                            <img src="codingimg/youtube-thumnail1.svg" alt="기계로 자르고 있는 모습">
+                        </div>
+                        <div class="hover-overlay">
+                            <div class="hover-text-box">
+                                <h3 class="hover-main-title">Monthly Drawing</h3>
+                                <p class="hover-sub-title">모나미로 추억 만들기</p>
+                                <p class="hover-desc">모나미와 한 달의 기억을 하나씩 만들어 갑니다.<br>완성도보다 과정에 집중하는 기록 방식.<br>당신의 일상이 하나의 결과물이 됩니다.</p>
+                            </div>
+                            <div class="hover-play-btn">
+                                 <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                            </div>
+                        </div>
+                        <div class="hover-mobile">
+                            <div class="text-box">
+                                <h3 class="main-title">Monthly Drawing</h3>
+                                <div class="play-btn">
+                                     <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.youtube.com/monami_official" target="_blank">
+                        <div class="img-box">
+                            <img src="codingimg/youtube-thumnail3.svg" alt="연필을 쥐고 쓰고 있는 모습">
+                        </div>
+                        <div class="hover-overlay">
+                            <div class="hover-text-box">
+                                <h3 class="hover-main-title">Study with Monami FX153</h3>
+                                <p class="hover-sub-title">스터디 윗 모나미</p>
+                                <p class="hover-desc">집중이 필요할 때, 조용히 함께합니다.<br>모나미 FX153과 함께하는 실제 공부 시간.<br> 필기 소리와 리듬만 남긴 영상으로 당신의 공부 시간을 정돈해 보세요.</p>
+                            </div>
+                            <div class="hover-play-btn">
+                                <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                            </div>
+                        </div>
+                        <div class="hover-mobile">
+                            <div class="text-box">
+                                <h3 class="main-title">Study with Monami FX153</h3>
+                                <div class="play-btn">
+                                    <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://www.youtube.com/monami_official" target="_blank">
+                        <div class="img-box">
+                            <img src="codingimg/youtube-thumnail2.svg" alt="메모지에 적고 있는 모습">
+                        </div>
+                        <div class="hover-overlay">
+                            <div class="hover-text-box">
+                                <h3 class="hover-main-title">How about your 2025?</h3>
+                                <p class="hover-sub-title">당신의 다짐들</p>
+                                <p class="hover-desc">2025년을 차분하게 정리하는 시간입니다.<br>지난 생각을 돌아보고, 앞으로의 방향을 기록합니다.<br>거창한 계획이 아니어도 괜찮습니다.<br>정리된 생각이 다음 한 걸음이 됩니다.</p>
+                            </div>
+                            <div class="hover-play-btn">
+                                <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                            </div>
+                        </div>
+                        <div class="hover-mobile">
+                            <div class="text-box">
+                                <h3 class="main-title">How about your 2025?</h3>
+                                <div class="play-btn">
+                                    <img src="codingimg/mobile-play-btn.svg" alt="재생 버튼">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- footer -->
+      <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="top-leftbox">
+                    <div class="family-site">
+                        <a href="#">FAMILY SITE</a>
+                        <a href="#"><img src="codingimg/plus-btn.png" alt="plus버튼"></a>
+                    </div>
+                </div>
+                <div class="top-rightbox">
+                    <ul class="gnb">
+                        <li><a href="sub-page/01.brandstory/brandstory.html">BRAND STORY</a></li>
+                        <li><a href="sub-page/02.product/product.html">PRODUCT</a></li>
+                        <li><a href="sub-page/04.journal/journal.html">JOURNAL</a></li>
+                        <li><a href="http://www.monamicosmetics.com/" target="_blank">FAMILY SITE</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                    <ul class="sns-icon">
+                        <li><a href="#"><img src="codingimg/kakao-icon.png" alt="카카오아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/monami_official/"target="_blank"><img src="codingimg/instagram-icon.png" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/monami_official" target="_blank"><img src="codingimg/youtube-icon.png" alt="유튜브아이콘"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="bottom-leftbox">
+                    <ul class="links">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                    <p class="address">
+                        경기도 용인시 수지구 손곡로 17
+                    </p>
+                    <div class="contact-number">
+                        <p class="tel">
+                            TEL : 031-216-0153
+                        </p>
+                        <span>|</span>
+                        <p class="fax">
+                            FAX : 031-270-5154
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom-rightbox">
+                    <p class="copyright">
+                        COPYRIGHT(C) MONAMI.CO.,LTD. ALL RIGHTS RESERVED.
+                    </p>
+                    <img src="codingimg/logo.png" alt="모나미로고">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    </div>
+</body>
+</html>

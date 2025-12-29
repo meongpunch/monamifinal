@@ -1,0 +1,317 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: "Pretendard", sans-serif; font-size: 21px; color: #000000; letter-spacing: -0.03em; background: #ffffff; }
+section {z-index:1;}
+.wrap {position: relative; margin: 0 auto; width: 100%; height: auto;}
+.main-title {font-size: 4.7vw; line-height: 1.2; font-weight: bold;}
+.page-title {font-size: 3.1vw;line-height: 1.2; font-weight: bold;}
+.sub-title {font-size: 1.6vw; line-height: 1.2; font-weight: bold;}
+.btn-txt {font-size: 18px; line-height: 1.5;}
+.desc {font-size: 21px; line-height: 1.5;}
+.sub-txt {line-height: 1.5; font-weight: 21px;}
+
+/* =========================
+  TEXT-Animation 공통 요소
+   ========================= */
+.text-line{--base: rgba(0,0,0,.2); --fill: #000; color: var(--base); -webkit-text-fill-color: var(--base); background-image: linear-gradient(var(--fill), var(--fill));background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0 0; display: inline-block;}
+.family-2 .text-line{--base: rgba(255,255,255,.25);--fill: #fff;}
+
+
+/* =========================
+   intro & visual section
+   ========================= */
+/* intro-text */
+.intro-line {position: relative; width: 100%; height: 400vh;}
+.textAni {position: relative; color: #000; height: 100%;}
+.textAni h1 {font-size: 48px; width: 100%; text-align: center; position: fixed; top: 40%; left: 50%; transform: translate(-50%, -40%); font-size: 5.2vw; font-weight: 700; color: #000; text-align: center; white-space: nowrap; pointer-events: none;}
+.textAni h1.active {position: fixed; left: 0; top: 42%;}
+p.text { height: 500px; transition: all 0.3s;  box-sizing: border-box;}
+.textAni .text {height: 100vh;/* 한 문장당 한 화면 */}
+
+/* intro-svg */
+.center-svg {position: fixed;top: 50%; left: 50%;transform: translate(-50%, -0%); pointer-events: none;}
+ /* 중앙기준 */
+.center-line{position: fixed; top:50%; left:50%; transform:translateX(-50%); pointer-events:none;}
+/* 점 */
+.dot{width:8px; height:8px; background:#000; border-radius:50%; margin:0 auto;}
+/* 선을 가두는 마스크 */
+.line-mask{width:5px; height:0; overflow:hidden; margin:0 auto;}
+/* 실제 선은 처음부터 풀 길이 */
+.line{width:5px; height:1200px; background:#000;}
+
+/*intro-video  */
+.intro-video {width: 100vw; height: 100vh; position: relative;}
+.videoWrap {position: sticky; top: 0; width: 100%; height: 100vh;overflow: hidden;}
+.intro-video .videoWrap video {width: 100vw; height: 100vh; object-fit: cover; position: absolute; left: 0; top: 0;}
+.intro-video .videoWrap:after {content: ""; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); position: absolute; left: 0;top: 0;}
+.intro-video .videotxt {position: absolute; left: 115px; bottom: 110px;}
+.intro-video .videotxt p {color: #fff; line-height: 1.5;}
+.intro-video .videotxt h2 {color:#fff; line-height: 1.2;}
+.intro-video .videotxt p:nth-child(1) {margin-bottom: 8px;}
+.intro-video .videotxt h2 {margin-bottom: 24px;}
+
+/* =========================
+            header
+   ========================= */
+header { background: rgba(0, 0, 0, 0.2); position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(67.75px); transform: translateY(-100%); transition: transform 0.4s ease-in-out, background 0.3s;}
+.innerHeader {width: 57.14%; height: 55px;margin: 0 auto; display:flex; justify-content: space-between; text-align: center; align-items: center;}
+.innerHeader h1.logo {width: 16%; padding-bottom: 8px;}
+.innerHeader .gnb {width: 75%; display: flex; justify-content: space-between;}
+.innerHeader .gnb li {font-size: 16px; color: #fff;}
+.innerHeader .menu {display: none;}
+
+/* intro-video 진입 시 붙여줄 클래스 */
+header.active {transform: translateY(0);}
+/* 스크롤을 내릴 때 숨기기 위한 클래스 */
+header.up {transform: translateY(-100%);}
+
+/* menu Open - 768px~ 햄버거 리스트 -> 오른쪽 밖에 있다가 리스트 클릭 시 나타나기*/ 
+.menuOpen{position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #1d1d1f; z-index: 999; transform: translateX(100%); transition: transform 0.45s ease;
+pointer-events: none;/*768px 이상일 때 클릭 방지*/}
+/* on class 붙었을 시 작동 */
+.menuOpen.on{transform: translateX(0);pointer-events: auto;visibility: visible;}
+.menuOpen .top {width: 100%; padding: 25px 31px; position: relative;}
+.menuOpen .top .closeBtn { display: block; width: 24px; height: 24px; position: absolute; top: 50%; transform: translateY(-50%); right: 30px; }
+.menuOpen .top .closeBtn span {display: block; background: #fff; width: 24px; height: 3px; position: absolute; top: 50%; transform: translateY(-50%); border-radius: 3px;}
+.menuOpen .top .closeBtn span.a {transform: rotate(45deg);}
+.menuOpen .top .closeBtn span.b {transform: rotate(-45deg);}
+.menuOpen .list {padding: 60px 48px; }
+.menuOpen .list li { margin-bottom: 72px;}
+.menuOpen .list li:last-child {margin-bottom: 0;}
+.menuOpen .list li a {color: #fff; display: block; width: 100%; height: 100%; font-weight: bold; font-size: 24px; opacity: 0.5; transition: all 0.3s;}
+.menuOpen .list li:hover a {opacity: 1; transition: all 0.3s;}
+
+/* ============================
+      intro-2.MAN SECTION
+   =========================== */
+
+/* 선 레이어 absolute 기준을 'man-stage'로 고정 */
+.man-stage {position: sticky; height: 100vh; display: flex; position: relative;transform: translateX(0px);will-change: transform;}
+
+/* man-section의 svg interection*/
+.man .scroll-line-layer {position: absolute;inset: 0; width: 100%; height: 100%; pointer-events: none;z-index: 1;}
+
+/* SVG 전체 위치(선 전체를 움직이는 곳: 시작하는 선 위치 확인하기) */
+.man .scroll-line-svg {position: absolute; left: 29%; top: 0; transform-origin: 0 0; will-change: transform;}
+.man .scroll-line {overflow: visible; display: block;}
+.man .scroll-line-path {vector-effect: non-scaling-stroke;}
+
+/* intro-2. man section의 css 스타일 적용 */
+.man {width: 100vw; height: 135vh; overflow: hidden;}
+.man .inner {width: 88%; display: flex; justify-content: flex-start; margin: 300px auto; position: relative; z-index: 3;}
+.man .textBox {background-color: #fff; padding-left: 0; height: 453px; position: relative; z-index: 4;}
+.man .textBox .main-title { margin-bottom: 25px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2);background-image: linear-gradient(#000, #000);background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
+.man .textBox span { font-family: "Pretendard", sans-serif; }
+.man .textBox .text-line span.c {font-family: 'Spartan', sans-serif;}
+
+/* 남자 이미지 레이어 관리 */
+.man .image-container { position: absolute; width: 800px; flex-shrink: 0; line-height: 0; right: 15px; z-index: 5; transform: translateY(300px);}
+.man .image-container img {width: 100%; height: auto; display: block;}
+.man .img-base {position: relative; z-index: 1;}
+.man .img-light {position: absolute; left: 0; top: 0; width: 100%; opacity: 0; z-index: 2; pointer-events: none;}
+
+/* ============================
+      collaboration section
+   =========================== */
+
+/* collabo01 */
+.collabo01 {background: #000; position: relative; width: 100%; height: 150vh; display: flex; justify-content: center; align-items: center; box-sizing: border-box; overflow: hidden; padding: 500px 0;}
+.collabo01 canvas {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; display: block;}
+.collabo01 .inner {position: relative; z-index: 2; width: 100%; max-width: 88%; margin: 0px auto; text-align: center; pointer-events: none;}
+.collabo01 .textBox {display: inline-block;}
+.collabo01 .sub-title {color: #fff; margin-bottom: 34px; font-weight: 500;}
+.collabo01 .main-title {font-size: 70px; color: #fff;}
+
+/* collabo02 */
+.collabo02 { width: 100%; padding: 300px 0 240px; overflow: hidden; background: #fff; color: #000;}  
+.collabo02 .inner {width: 88%; margin: 0 auto 110px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.collabo02 .page-title {font-size: 60px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000);
+background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
+.collabo02 .inner .btn {background: #eee; display: inline-block; padding: 13px 16px 13px 30px; border-radius: 30px; font-size: 18px; font-weight: 500;}
+.collabo02 .inner .btn > img {margin-left: 13px;}
+.collabo02 .sub-title {font-size: 30px;}
+.collabo02 .swiper {padding: 0 115px;}
+.collabo02 .swiper-wrapper {width: 100%;  display: flex;}
+.collabo02 .swiper-slide {position: relative; width: auto;} 
+.collabo02 .swiper-slide .imgBox {border-radius: 30px; overflow: hidden; width: 372px; height: 580px;}
+.collabo02 .swiper-slide img {width: 100%; height: 100%; object-fit: cover;}
+.collabo02 .swiper-slide a {display: block; width: 100%; height: 100%;}
+
+/* hover박스 */
+.collabo02 .hoverBox {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); border-radius: 30px; color: #E8E8ED; padding:60px 40px 40px; box-sizing: border-box; transition: opacity 0.4s ease; opacity: 0; display: flex; flex-direction: column; justify-content: space-between;}
+/* hover 효과 */
+.collabo02 .swiper-slide:hover .hoverBox {opacity: 1; transition: opacity 0.4s ease;}
+
+/* 모바일 버전을 위해 데스크톱 모드에서는 숨김 내용 */
+.collabo-mobile-box {display: none; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); z-index: 5; pointer-events: none; padding: 30px; box-sizing: border-box; flex-direction: column; justify-content: flex-end; }
+.collabo-mobile-box .txt-group {width: 100%;display: flex; justify-content: space-between;align-items: flex-end;}
+.collabo-mobile-box .m-title {color: #fff; font-size: 24px; font-weight: 700; line-height: 1.2; text-align: left;}
+.collabo-mobile-box .icon img { width: 40px;}
+
+/* ============================
+      family section
+   =========================== */
+
+/* family-1:여성 이미지 */
+.family-1 {width: 100vw; height: auto; position: relative; overflow: hidden;}
+.family-1 .sticky-wrapper {position: sticky; top: 0; height: auto; display: flex; overflow: visible;z-index: 10;}
+.scroll-line-container {position: absolute; inset: 0; z-index: 0; pointer-events: none;}
+.scroll-line-container svg {width: 100%; height: 100%;}
+.family-1 .image-container {position: relative; width: 1187px; max-width: 1920px; line-height: 0; margin-top: clamp(120px, 22vh, 450px); z-index: 5;}
+.family-1 .image-container img {width: 100%; height: auto; display: block;}
+.family-1 .image-container .img-base {position: relative; z-index: 1;}
+.family-1 .image-container .img-light {position: absolute; top: 0; left: 0; width: 100%; opacity: 0; z-index: 2; object-fit: cover;}
+.family-1 .inner {width: 88%; z-index: 10; position: relative;}
+.family-1 .inner .text-box {text-align: right; width: 35vw; position: absolute; right: 10%; top: 35%;}
+.family-1 .inner .text-box .sub-title {margin-bottom: 35px;}
+.family-1 .inner .text-box .main-title {margin-bottom: 35px;}
+
+/* family-2 (원본 유지) */
+.family-2 {width: 100%; height: auto; background-color: black; padding-bottom: 300px; overflow: hidden;}
+.family-2 .inner {width: 88%; height: auto; margin: auto 115px;  overflow: hidden;}
+.family-2 .inner .page-title {color: #fff; padding: 100px 0 110px 0; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#fff, #fff); background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%;}
+.family-2 .inner ul {color: #fff; display: flex; flex-wrap: nowrap; width: 5100px; margin: 0; padding: 0;}
+.family-2 .inner ul li {flex-shrink: 0; width: 750px; overflow: hidden;   margin-right: 48px; padding-right:28px;}
+.family-2 .inner ul li .img img {width: 100%; height: 100%; border-radius: 30px;} 
+.family-2 .inner ul li .text-box {padding-top: 15px;}
+.family-2 .inner ul li .top-txt {font-size: 1.6vw; font-weight: 300; line-height: 1.5; padding-top: 10px;}
+.family-2 .inner ul li .btm-txt {font-size: 2.6vw; font-weight: bold; line-height: 1.5; display: flex; justify-content: space-between; height: 80px;}
+.family-2 .inner ul li .btn {width: 3.3vw; height: 3.3vh;}
+.family-2 .inner ul li .btn img {width: 100%;}
+.family-2 .list li .img img{filter: brightness(0.35); transition: filter .25s ease; will-change: filter;}
+/* 활성 카드 */
+.family-2 .list li.is-focus .img img{filter: brightness(1);}
+
+/* ============================
+      product section
+   =========================== */
+ /*product-youtube */
+section.product-1, section.product-2 {position: relative; overflow: hidden; min-height: 1557px;}
+section.product-1 .inner, section.product-2 .inner {width: 88%; margin: 400px auto;}
+section.product-youtube { position: relative; }
+/* product-youtube svg 인터랙션 */
+.scroll-line{ overflow:visible; display:block; }
+.scroll-line-path{ vector-effect:non-scaling-stroke; }
+
+/* PRODUCT-1 */
+.product-1 .main-title {-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000),linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22));background-repeat: no-repeat;-webkit-background-clip: text; background-clip: text;background-size: 0% 100%;background-position: 0% 0%; margin-bottom:25px; font-size: 90px;}    
+.product-1 .inner .title-box .sub-title {margin-bottom: 24px;}
+.product-1 .img {width: 61vw; height: 902px; position: absolute; top:35%; right: 0; transform: translateY(-50%); height: 360px; max-width: none;}
+.product-1 .img img {width: 100%;}
+
+/* PRODUCT-2 */
+.product-2 .title-box {width: 100%; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 110px; flex-wrap: wrap;}
+.product-2 .inner .title-box .main-title {margin-bottom: 45px; margin-bottom: 25px;-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000); background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
+.product-2 .title-box .page-title span {font-family: 'Spartan', sans-serif;}
+.product-2 .title-box {background-color:#fff;}
+.product-2 .title-box .btn {background: #eee; display: inline-block; padding: 13px 16px 13px 30px; border-radius: 30px; font-size: 18px; font-weight: 500;}
+.product-2 .title-box .btn > img {margin-left: 13px;}
+.product-2 ul {display: flex; gap: 24px; position: relative;}
+.product-2 ul li {width: 49.3%; min-height: 596px; text-align: center; background: #F1F1F1; border-radius: 30px; padding-top: 65px; transition: 0.4s; position: relative; overflow: hidden; transition: transform .45s cubic-bezier(.2,.8,.2,1);}
+.product-2 ul li a {display: block; height: 100%; position: relative; z-index: 2;}
+.product-2 ul li a .card-title {font-size: 32px; font-weight: bold; line-height: 1.2; margin-bottom: 27px;}
+.product-2 ul li:first-child a .img {margin-bottom: 0px;}
+.product-2 ul li:last-child .img {position: absolute; right: 0;}
+.product-2 ul li:last-child a .img {margin-top: 149px; text-align: right; width: 100%;}
+.product-2 ul li:first-child a .img img {width: 80%;}
+.product-2 ul li:last-child a .img img {width: 70%;}
+.product-2 ul li::after {content: ''; position: absolute; inset: 0;  opacity: 0; transition: opacity 0.4s ease; pointer-events: none; z-index: 1; border-radius: 30px; }
+.product-2 ul li:hover::after {opacity: 1;}
+.product-2 ul li:hover {transform: translateY(-6px);}
+
+/* ============================
+      youtube section
+   =========================== */
+  /* youtube section 01 */
+.youtube .top {display: flex; align-items:flex-end; flex-direction: column; text-align: right; margin-bottom: 35px; padding: 300px 0 500px 0;}
+.youtube .top .top-txtBox {margin-bottom: 24px;}
+.youtube .top .top-txtBox .sub-title {margin-bottom: 24px; font-weight: 700;}
+.youtube .top .bottom-txtBox .main-title {font-weight: 700;}
+.youtube .top .bottom-txtBox .sub-txt span {font-family:"League Spartan", sans-serif;}
+.scroll-line-layer {position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;}
+.product-youtube .inner, .product-youtube .youtube-swiper {position: relative; z-index: 2; width:94%;}
+.wrap { position: relative; overflow-x: hidden;}
+.scroll-line-layer{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1;}
+/* wrap의 주요 요소는 선보다 위로 */
+.wrap > footer, .wrap > div:not(.scroll-line-layer){position:relative; z-index:2;}
+.product-youtube .scroll-line-svg{position: absolute; left: 130px; top: 1070px; transform-origin: 0 0; will-change: transform;}
+
+/* youtube02 section*/
+.youtube02 {width: 100%; padding: 0 0 200px; overflow: hidden; background: #fff;}
+
+/* 1. 상단 타이틀 & 버튼 */
+.youtube02 .top {display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px;}
+.youtube02 .page-title {font-size: 60px; font-weight: 700; line-height: 1.2; white-space: nowrap;}
+.youtube02 .btn {display: flex; align-items: center; gap: 10px; background: #E8E8ED; padding: 13px 16px 16px 30px; border-radius: 999px; font-weight: 500; font-size: 18px; width: max-content;}
+.youtube02 .btn img { width: 34px; }
+
+/* 2. Swiper 영역 */
+.youtube.swiper {width: 100%; overflow: visible !important; padding-bottom: 50px;}
+.youtube .swiper-wrapper {display: flex !important;box-sizing: border-box;}
+
+/* youtube 슬라이드 공통 설정 */
+.youtube .swiper-slide {display: block; flex-shrink: 0; position: relative;}
+.youtube .swiper-slide a {display: block;width: 100%;height: 100%; position: relative; border-radius: 30px;  overflow: hidden; transform: translateZ(0); }
+.youtube .swiper-slide .img-box { width: 100%; height: 100%; position: relative; }
+.youtube .swiper-slide .img-box img {width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block;}
+
+/* === 오버레이 스타일 === */
+.hover-overlay, .hover-mobile {position: absolute; top: 0; left: 0;width: 100%; height: 100%; box-sizing: border-box; z-index: 5; pointer-events: none; }
+.hover-overlay {padding: 50px 70px;display: flex; flex-direction: column; justify-content: space-between; opacity: 0; transition: opacity 0.5s ease; background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);}
+.hover-text-box { color: #fff !important; text-align: left; }
+.hover-main-title { font-size: 60px; font-weight: bold; margin-bottom: 20px; transform: translateY(20px); transition: transform 0.5s; word-break: keep-all; color: #fff !important; }
+.hover-sub-title { font-size: 30px; font-weight: bold; margin-bottom: 30px; transform: translateY(20px); transition: transform 0.5s 0.1s; color: #fff !important; }
+.hover-desc { font-size: 16px; line-height: 1.5; opacity: 0; transition: opacity 0.5s 0.2s; word-break: keep-all; color: rgba(255,255,255,0.8) !important; }
+.hover-play-btn { align-self: flex-end; width: 121px; transform: translateY(20px); transition: transform 0.5s; }
+
+/* 모바일 버전 youtube 카드 섹션 변경 스타일 */
+.hover-mobile {background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);}
+.hover-mobile .text-box { position: absolute; bottom: 30px; left: 30px; right: 30px;display: flex; justify-content: space-between; align-items: center; color: #fff;}
+.hover-mobile .main-title { font-size: 28px; font-weight: bold; margin: 0; line-height: 1.2; text-align: left; word-break: keep-all; color: #fff !important; }
+.hover-mobile .play-btn img { width: 48px; height: 48px; }
+
+/* ============================
+            footer
+   =========================== */
+footer {color: #fff; background: #1d1d1f; padding: 84px 189px 162px;}
+.footer-inner {width: 100%;}
+    /* footer-top */
+.footer-inner .footer-top {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 131px;}
+.footer-inner .footer-top .top-leftbox .family-site {width: 287px; display: flex; justify-content: space-between; border-bottom: 2px solid #fff; padding: 13px; margin-bottom: 19px;}
+.footer-inner .footer-top .top-leftbox .family-site a {display: block; font-size: 18px;}
+.footer-inner .footer-top .left-box .family-site img {width: 16px;}
+.footer-inner .footer-top .top-rightbox {width: 100%;}
+.footer-inner .footer-top .top-rightbox .gnb { display: flex; justify-content: space-between; font-size: 24px; margin-bottom: 38px;  width: 52vw;}
+.footer-inner .footer-top .top-rightbox .sns-icon {display: flex; justify-content: right; gap: 10px;}
+.footer-inner .footer-top .top-rightbox .sns-icon img {width: 40px}
+
+  /* footer-bottom */
+.footer-inner .footer-bottom {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.footer-inner .footer-bottom .bottom-leftbox {width: 287px; font-size: 14px;}
+.footer-inner .footer-bottom .bottom-leftbox .links {display: flex; justify-content: space-between; margin-bottom: 10px;}
+.footer-inner .footer-bottom .bottom-leftbox .links li {font-size: 14px; letter-spacing: -0.03em;}
+.footer-inner .footer-bottom .bottom-leftbox .links li:nth-child(1) {font-weight: bold;}
+.footer-inner .footer-bottom .bottom-leftbox .address {font-size: 14px; margin-bottom: 10px;}
+.footer-inner .footer-bottom .bottom-leftbox .contact-number {display: flex; gap: 6px;}
+.footer-inner .footer-bottom .bottom-rightbox {width: 100%; font-size: 14px; display: flex; align-items: baseline; margin-top: auto; justify-content: space-between;}
+.footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 37px;}
+.footer-inner .footer-bottom .bottom-rightbox img {width: 121px; height: 24px;} 
+
+
+
+
+
+
