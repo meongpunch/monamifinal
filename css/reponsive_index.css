@@ -273,6 +273,7 @@ button:focus {outline: none}
     .family-2 .list li .img img {filter: brightness(1) !important;}
 
     /* youtube section */
+    .youtube {margin-top: 150px;}
     .youtube .top .top-txtBox .main-title {font-size: 40px;}
     .youtube .top .top-txtBox .sub-title {font-size: 18px;}
     .youtube .top .bottom-txtBox .sub-txt{font-size: 16px;}
@@ -319,7 +320,7 @@ button:focus {outline: none}
     .menuOpen .list {padding: 31px;}
     
     /* intro section */
-    .textAni h1 {font-size: 25px;}
+    .textAni h1 {font-size: 35px;}
     .intro-video .videotxt {position: absolute; left: 25px; bottom: 40px;}
     .intro-video .videotxt img {width: 46px; height: 10px;}
     .intro-video .videotxt h2 {font-size: 30px; line-height: 1.2; margin-bottom: 9px;}
@@ -355,6 +356,7 @@ button:focus {outline: none}
     .family-2 .inner ul li .btn {width: 30px; height: 30px;}
     
     /* product section */
+    section.product-1 {margin-bottom: 0;}
     section.product-1 .inner {margin: 100px auto;}
     .product-1 .inner .title-box .sub-title {font-size: 14px;}
     .product-1 .inner .title-box .main-title {font-size: 30px;}
@@ -365,6 +367,7 @@ button:focus {outline: none}
     .product-2 .page-title {font-size: 24px; margin-bottom:25px;}
     .product-2 ul li a .card-title {font-size: 18px;}
     .product-2 ul li {min-height: 500px; border-radius: 12px;}
+    .product-2 ul li:last-child {margin-bottom: 0;}
     .product-2 ul li a .desc {font-size: 14px; font-weight: 300;}
     .main-title .text-line {font-size: 30px;}
     .page-title .text-line {font-size: 24px;}
@@ -373,7 +376,7 @@ button:focus {outline: none}
     .family-2 .inner .page-title {font-size: 24px;}
 
     /* youtube section */
-    .youtube .top {padding: 100px 0 200px 0;}
+    .youtube .top {padding: 0 0 200px 0;}
     .youtube .top .top-txtBox .sub-title {font-size: 14px;}
     .youtube .top .top-txtBox .main-title {font-size: 30px;}
     .youtube .top .bottom-txtBox .sub-txt {opacity: 0;}
