@@ -209,8 +209,30 @@ section.product-youtube { position: relative; }
 /* PRODUCT-1 */
 .product-1 .main-title {-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000),linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22));background-repeat: no-repeat;-webkit-background-clip: text; background-clip: text;background-size: 0% 100%;background-position: 0% 0%; margin-bottom:25px; font-size: 90px;}    
 .product-1 .inner .title-box .sub-title {margin-bottom: 24px;}
-.product-1 .img {width: 61vw; height: 902px; position: absolute; top:35%; right: 0; transform: translateY(-50%); height: 360px; max-width: none;}
+.product-1 .img {width: 61vw; height: auto; position: absolute; top:49%; right: 0; transform: translateY(-50%); max-width: none;}
 .product-1 .img img {width: 100%;}
+/* style.css - PRODUCT-1 부분 수정 */
+
+/* 기존 .product-1 .img img {width: 100%;} 대신 아래 내용을 사용하세요 */
+
+.product-1 .img .img-base {
+    position: relative; 
+    z-index: 1; 
+    width: 100%; 
+    display: block;
+}
+
+.product-1 .img .img-light {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+   ; /* 부모 높이와 맞춤 */
+    opacity: 0;   /* 처음엔 안 보이게 */
+    z-index: 2; 
+    pointer-events: none;
+    object-fit: contain; /* 이미지 비율 유지 */
+}
 
 /* PRODUCT-2 */
 .product-2 .title-box {width: 100%; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 110px; flex-wrap: wrap;}

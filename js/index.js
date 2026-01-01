@@ -458,6 +458,25 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+/* index.js - PRODUCT-1 이미지 밝기 변화 수정 */
+
+  /* =========================
+     PRODUCT-1 섹션: 이미지 밝기 변화 (Man 섹션과 동일한 방식 적용)
+     ========================= */
+  const productLightEl = document.querySelector(".product-1 .img-light");
+  
+  if (productLightEl) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".product-1",
+        start: "top 50%",    // 시작 지점 (원하는 대로 조절 가능)
+        end: "bottom 50%",   // 끝 지점
+        scrub: 1.5,          // 부드러운 반응 속도
+      }
+    })
+    .to(productLightEl, { opacity: 1, ease: "sine.inOut" }) // 서서히 켜짐
+    .to(productLightEl, { opacity: 0, ease: "sine.inOut" }); // 서서히 꺼짐
+  }
 
 
 
